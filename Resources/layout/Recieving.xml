@@ -6,43 +6,55 @@
     android:layout_height="match_parent"
     android:background="#edecda">
     <ImageView
-        android:src="@drawable/logoright_sample"
+        android:src="@drawable/logoleft_sample"
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:id="@+id/Logo_Design"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="60px"
+        android:layout_alignParentleft="true"
+        android:layout_marginLeft="60px"
         />
 
     <ImageButton
-        android:src="@drawable/send_btn"
+        android:src="@drawable/recieve_btn"
         android:backgroundTint="#edecda"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_below="@+id/Logo_Design"
+        android:layout_alignParentRight="true"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:layout_marginBottom="53px"
-        android:id="@+id/Send_BTN"
+        android:layout_marginBottom="52px"
+        android:id="@+id/recieve_BTN"
         />
-    <EditText
+ 
+    <TextView
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:background="#ebddcf"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/Send_BTN"
-        android:id="@+id/message_Box"
-        />
+        android:layout_below="@+id/recieve_BTN"
+        android:id="@+id/message_Box" />
+
     <ImageView
-        android:src="@drawable/sending_page"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="170dp"
-        android:layout_below="@+id/Send_BTN"
+        android:src="@drawable/warning"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/LogOut_BTN"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="257dp"
+        android:id="@+id/imageView2" />
+    
+    <ImageView
+        android:src="@drawable/recieving_page"
+       android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="170dp"
+        android:layout_below="@+id/recieve_BTN"
+        android:layout_alignParentLeft="true"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="15dp"
         android:id="@+id/imageView1"
         />
  

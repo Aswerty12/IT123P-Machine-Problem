@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#edecda">
+    <ImageView
+        android:src="@drawable/logoleft_sample"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:id="@+id/Logo_Design"
+        android:layout_alignParentleft="true"
+        android:layout_marginLeft="45px"
+        />
+    <ImageView
+        android:src="@drawable/warning"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/imageView1" />
+    <TextView
+        android:text="Report"
+        android:textColor="#ff6b5b"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginLeft="56px"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/Logo_Design"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <TextView
+        android:text="an issue"
+        android:textColor="#000"
+        android:textSize=25sp"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="5dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/Logo_Design"
+        android:layout_toRightOf="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <TextView
+        android:text="Let us know what seems to be the problem so we could address it"
+        android:textSize="11sp"
+        android:textColor="#000"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="3dp"
+        android:layout_below="@id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+    <ImageView
+        android:src="@drawable/line"
+        android:layout_below="@+id/textView3"
+        android:layout_width="250dp"
+        android:layout_height="10dp"
+        android:layout_marginLeft="48px"
+        android:layout_marginTop="3dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView2" />
+    <ImageButton
+        android:src="@drawable/hs_btn"
+        android:backgroundTint="#edecda"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="11dp"
+        android:layout_below="@+id/imageView2"
+        android:id="@+id/imageButton1" />
+    <ImageButton
+        android:src="@drawable/violence_btn"
+        android:backgroundTint="#edecda"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="11dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/imageButton1"
+        android:id="@+id/imageButton2" />
+    <ImageButton
+        android:src="@drawable/sh_btn"
+        android:backgroundTint="#edecda"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="11dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/imageButton2"
+        android:id="@+id/imageButton3" />
+    <TextView
+        android:text="Others:"
+        android:textSize="15sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5.5dp"
+        android:layout_below="@+id/imageButton3"
+        android:id="@+id/textView4"
+        />
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/imageButton3"
+        android:layout_toRightOf="@+id/textView4"
+        android:id="@+id/editText1" />
+    <ImageView
+        android:src="@drawable/report_page"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="11dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageView2"
+        android:id="@+id/imageView3" />
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

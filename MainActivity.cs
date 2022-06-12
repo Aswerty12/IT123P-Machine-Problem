@@ -24,7 +24,7 @@ namespace IT123P_Machine_Problem
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.Login);
 
             edit1 = FindViewById<EditText>(Resource.Id.editText1);
             edit2 = FindViewById<EditText>(Resource.Id.editText2);
