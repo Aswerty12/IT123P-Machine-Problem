@@ -14,7 +14,8 @@ namespace IT123P_Machine_Problem
     public class MainActivity : AppCompatActivity
     { 
         EditText edit1, edit2;
-        Button btn1, btn2;
+        ImageButton Lin;
+        TextView register;
         HttpWebResponse response;
         HttpWebRequest request;
         string res = "", uname = "", pword = "";
@@ -24,15 +25,15 @@ namespace IT123P_Machine_Problem
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Login);
+            SetContentView(Resource.Layout.activity_main);
 
-            edit1 = FindViewById<EditText>(Resource.Id.editText1);
-            edit2 = FindViewById<EditText>(Resource.Id.editText2);
-            btn1 = FindViewById<Button>(Resource.Id.button1);
-            btn2 = FindViewById<Button>(Resource.Id.button2);
+            edit1 = FindViewById<EditText>(Resource.Id.Username_Line);
+            edit2 = FindViewById<EditText>(Resource.Id.Password_Line);
+            register = FindViewById<TextView>(Resource.Id.Register_Clck);
+            Lin = FindViewById<ImageButton>(Resource.Id.Main_Btn);
 
-            btn1.Click += Login;
-            btn2.Click += Registration;
+            Lin.Click += Login;
+            register.Click += Registration;
 
         }
 
@@ -51,7 +52,7 @@ namespace IT123P_Machine_Problem
             response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             res = reader.ReadToEnd();
-            Toast.MakeText(this, pword, ToastLength.Long).Show();
+            Toast.MakeText(this, res, ToastLength.Long).Show();
 
             if (res.Contains("OK!"))
             {

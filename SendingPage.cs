@@ -18,10 +18,11 @@ namespace IT123P_Machine_Problem
     {
         EditText editMessage;
         TextView User;
-        Button btnSubmit,btnHome;
+        ImageButton sendIt, goBack;
+        
         HttpWebResponse response;
         HttpWebRequest request;
-        String message = "", username = "", res = "", str = "", login_name = "";
+        String message = "", username = "", res = "", login_name = "";
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,19 +33,20 @@ namespace IT123P_Machine_Problem
             login_name = Intent.GetStringExtra("Name");
             //instantiate widgets
             User= FindViewById<TextView>(Resource.Id.textView2);
-            editMessage = FindViewById<EditText>(Resource.Id.editText1);
-            btnSubmit = FindViewById<Button>(Resource.Id.button1);
-            btnHome = FindViewById<Button>(Resource.Id.button2);
+            editMessage = FindViewById<EditText>(Resource.Id.message_Box);
+            sendIt = FindViewById<ImageButton>(Resource.Id.Send_BTN);
+            goBack = FindViewById<ImageButton>(Resource.Id.LogOut_BTN);        
             User.Text = login_name;
 
-            btnHome.Click += this.Back_LandingPage;
-            btnSubmit.Click += this.AddMessage;
+            goBack.Click += (o, i) =>
+            {
+                Intent goback = new Intent(this, typeof(MainActivity));
+                StartActivity(goback);
+            };//Logs out of course
+
+            sendIt.Click += this.AddMessage;
         }
         
-        public void Back_LandingPage(object sender, EventArgs e)//Back to Landing Page
-        {
-            Finish();
-        }
 
         public void AddMessage(object sender, EventArgs e)
         {

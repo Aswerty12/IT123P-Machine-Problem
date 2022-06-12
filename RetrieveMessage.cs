@@ -19,7 +19,8 @@ namespace IT123P_Machine_Problem
     {
         
         TextView txtMsg, txtID;
-        Button btn1, btn2, btn3;
+        ImageButton Receive, Report, LogOff;
+        
         HttpWebResponse response;
         HttpWebRequest request;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,21 +28,25 @@ namespace IT123P_Machine_Problem
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.retrievepage);
-            //receive message
-            btn1 = FindViewById<Button>(Resource.Id.button1);
-            // button 2 is report (wip since its mvps)
-            btn2 = FindViewById<Button>(Resource.Id.button2);
-            btn3 = FindViewById<Button>(Resource.Id.button3);   
-            txtMsg = FindViewById<TextView>(Resource.Id.textView1);
+            SetContentView(Resource.Layout.Recieving);
+            //Buttons
+            Receive = FindViewById<ImageButton>(Resource.Id.recieve_BTN);
+            Report = FindViewById<ImageButton>(Resource.Id.Report_Btn);
+            LogOff = FindViewById<ImageButton>(Resource.Id.LogOut_BTN);
+             
+            txtMsg = FindViewById<TextView>(Resource.Id.message_Box);
             // hidden textview to store ID (for reporting)
-            txtID = FindViewById<TextView>(Resource.Id.textView2);
+            txtID = FindViewById<TextView>(Resource.Id.textView1);
             txtID.Visibility = Android.Views.ViewStates.Invisible;
 
-            btn1.Click += getMessage;
-            btn2.Click += reportMessage; 
-            btn3.Click += returnToLanding;
-
+            Receive.Click += getMessage;
+            Report.Click += reportMessage;
+            LogOff.Click += (o, i) =>
+            {
+                Intent goback = new Intent(this, typeof(MainActivity));
+                StartActivity(goback);
+            };
+            //Auto fills out the entry on  load in
             buildMessage();
         }
 
@@ -93,10 +98,6 @@ namespace IT123P_Machine_Problem
             Toast.MakeText(this, res, ToastLength.Long).Show();
         }
 
-        //Simple return to landing page/previous page
-        public void returnToLanding(object sender, EventArgs e)
-        {
-            Finish();
-        }
+        
     }
 }

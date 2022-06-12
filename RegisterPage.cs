@@ -17,22 +17,25 @@ namespace IT123P_Machine_Problem
     public class RegisterPage : Activity
     {
         EditText username, password;
-        Button send, goback;
+        ImageButton go;
+        
         HttpWebResponse response;
         HttpWebRequest request;
-        string res = "", uname = "", pword = "";
+        string res = "";
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             //set layout
-            SetContentView(Resource.Layout.registration);
+            SetContentView(Resource.Layout.Register);
             // Create your application here
-            username = FindViewById<EditText>(Resource.Id.editText1);
-            password = FindViewById<EditText>(Resource.Id.editText2);
-            send = FindViewById<Button>(Resource.Id.button1);
-            goback = FindViewById<Button>(Resource.Id.button2);
-            send.Click += newAccount;
-            goback.Click += GoBack;
+            username = FindViewById<EditText>(Resource.Id.Username_Line);
+            password = FindViewById<EditText>(Resource.Id.Password_Line);
+            go = FindViewById<ImageButton>(Resource.Id.Main_Btn);
+
+            
+
+           go.Click += newAccount;
+            
         }
 
         public void newAccount(object sender, EventArgs e)
@@ -53,7 +56,11 @@ namespace IT123P_Machine_Problem
                 res = reader.ReadToEnd();
                 Toast.MakeText(this, res, ToastLength.Long).Show();
                 //Clear once the user submitted a message
-                Clear();
+                //Clear();
+                //Alt Logic Login with confirmation that user is now registerd
+                Intent i = new Intent(this, typeof(LandingPage));
+                i.PutExtra("Name", newuser);
+                StartActivity(i);
             }
             else
             {
@@ -79,7 +86,7 @@ namespace IT123P_Machine_Problem
             username.Text = "";
             password.Text = "";
         }
-
+        //Deprecated Feature
         public void GoBack(object sender, EventArgs e)
         {
             Finish();

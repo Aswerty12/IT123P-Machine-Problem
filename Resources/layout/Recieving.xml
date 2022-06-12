@@ -10,7 +10,7 @@
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:id="@+id/Logo_Design"
-        android:layout_alignParentleft="true"
+        android:layout_alignParentLeft="false"
         android:layout_marginLeft="60px"
         />
 
@@ -34,16 +34,6 @@
         android:layout_centerInParent="true"
         android:layout_below="@+id/recieve_BTN"
         android:id="@+id/message_Box" />
-
-    <ImageView
-        android:src="@drawable/warning"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/LogOut_BTN"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="37dp"
-        android:layout_marginBottom="257dp"
-        android:id="@+id/imageView2" />
     
     <ImageView
         android:src="@drawable/recieving_page"
@@ -71,4 +61,23 @@
         android:layout_centerInParent="true"
         android:id="@+id/LogOut_BTN" 
         />
+    <ImageButton
+        android:src="@drawable/warning"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#ebddcf"
+        android:layout_above="@+id/LogOut_BTN"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="234dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/Report_Btn" />
+    <TextView
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LogOut_BTN"
+        android:id="@+id/textView1" 
+        android:visibility="invisible"/>
 </RelativeLayout>

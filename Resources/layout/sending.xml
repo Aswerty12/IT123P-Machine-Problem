@@ -31,6 +31,7 @@
         android:background="#ebddcf"
         android:layout_centerInParent="true"
         android:layout_below="@+id/Send_BTN"
+        android:maxLength="255"
         android:id="@+id/message_Box"
         />
     <ImageView
@@ -45,7 +46,14 @@
         android:layout_marginRight="20dp"
         android:id="@+id/imageView1"
         />
- 
+    <TextView
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LogOut_BTN"
+        android:id="@+id/textView2" 
+        android:visibility="invisible"/>
 
     <ImageButton
         android:src="@drawable/logout_btn"

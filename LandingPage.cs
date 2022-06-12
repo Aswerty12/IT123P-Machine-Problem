@@ -16,33 +16,41 @@ namespace IT123P_Machine_Problem
     {
         string login_name;
         TextView txt1;
-        Button sendbtn, receivebtn;
+        ImageButton send, receive, back;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.landingpage);
-            //testing for login basic form
+            SetContentView(Resource.Layout.Landing_Page);
+            //variable is just here because sending variables across events is a PITA
             login_name = Intent.GetStringExtra("Name");
             txt1 = FindViewById<TextView>(Resource.Id.textView1);
             txt1.Text = login_name;
 
+            //ImageButtons
+            send = FindViewById<ImageButton>(Resource.Id.Send_BTN);
+            receive = FindViewById<ImageButton>(Resource.Id.Recieve_BTN);
+            back = FindViewById<ImageButton>(Resource.Id.LogOut_BTN);
             //button logic
-            sendbtn = FindViewById<Button>(Resource.Id.button1);
-            receivebtn = FindViewById<Button>(Resource.Id.button2);
+            
 
-            sendbtn.Click += (o, i) =>
+            send.Click += (o, i) =>
             {
-                Intent send = new Intent(this, typeof(SendingPage));
-                send.PutExtra("Name", login_name);
-                StartActivity(send);
+                Intent sending = new Intent(this, typeof(SendingPage));
+                sending.PutExtra("Name", login_name);
+                StartActivity(sending);
             };
-            receivebtn.Click += (o, i) =>
+            receive.Click += (o, i) =>
             {
-                Intent receive = new Intent(this,typeof(RetrieveMessage));
-                receive.PutExtra("Name", login_name);
-                StartActivity(receive);
+                Intent receiving = new Intent(this,typeof(RetrieveMessage));
+                receiving.PutExtra("Name", login_name);
+                StartActivity(receiving);
+            };
+            back.Click += (o, i) =>
+            {
+                Intent goback = new Intent(this, typeof(MainActivity));
+                StartActivity(goback);
             };
         }
     }

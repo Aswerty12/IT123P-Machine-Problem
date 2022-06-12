@@ -109,6 +109,7 @@
         android:id="@+id/user_valid"
         android:layout_marginLeft="15.0dp"
         android:textColor="#FF0000"
+        android:visibility="invisible"
         />
 
     <ImageButton
@@ -122,6 +123,7 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:layout_centerInParent="true"
+        
         />
 
 </RelativeLayout>

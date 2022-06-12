@@ -191,7 +191,7 @@
     <AndroidResource Include="Resources\drawable\warning.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Login.xml" />
+    <AndroidResource Include="Resources\layout\LoginPage.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Recieving.xml" />
