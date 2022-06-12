@@ -17,8 +17,7 @@ namespace IT123P_Machine_Problem
     [Activity(Label = "Receive A Message of Support")]
     public class RetrieveMessage : Activity
     {
-        // still missing user since its testing (adjust for login)
-        string user;
+        
         TextView txtMsg, txtID;
         Button btn1, btn2, btn3;
         HttpWebResponse response;
@@ -29,7 +28,7 @@ namespace IT123P_Machine_Problem
 
             // Create your application here
             SetContentView(Resource.Layout.retrievepage);
-            // page for the minimum schminimum liminum receiving page
+            //receive message
             btn1 = FindViewById<Button>(Resource.Id.button1);
             // button 2 is report (wip since its mvps)
             btn2 = FindViewById<Button>(Resource.Id.button2);
@@ -40,7 +39,7 @@ namespace IT123P_Machine_Problem
             txtID.Visibility = Android.Views.ViewStates.Invisible;
 
             btn1.Click += getMessage;
-            btn2.Click += reportMessage; // dont do stuff on this since not linked to login
+            btn2.Click += reportMessage; 
             btn3.Click += returnToLanding;
 
             buildMessage();
@@ -83,7 +82,15 @@ namespace IT123P_Machine_Problem
 
         public void reportMessage(object sender, EventArgs e)
         {
-        // since mvps i wont implement it for now
+            string user = Intent.GetStringExtra("Name");
+            string reportedID = txtID.Text;
+            string reporter = user;
+            string webRequest = "http://192.168.0.17/SupportApp/REST/report_message.php?messageID=" + reportedID + "&username=" + reporter;
+            request = (HttpWebRequest)WebRequest.Create(webRequest);
+            response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string res = reader.ReadToEnd();
+            Toast.MakeText(this, res, ToastLength.Long).Show();
         }
 
         //Simple return to landing page/previous page
