@@ -81,16 +81,7 @@ namespace IT123P_Machine_Problem
             }
         }
 
-        public void Clear()
-        {
-            username.Text = "";
-            password.Text = "";
-        }
-        //Deprecated Feature
-        public void GoBack(object sender, EventArgs e)
-        {
-            Finish();
-        }
+        
     }
    
 }

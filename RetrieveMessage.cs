@@ -18,7 +18,7 @@ namespace IT123P_Machine_Problem
     public class RetrieveMessage : Activity
     {
         
-        TextView txtMsg, txtID;
+        TextView txtMsg, txtID, yourID;
         ImageButton Receive, Report, LogOff;
         
         HttpWebResponse response;
@@ -38,6 +38,8 @@ namespace IT123P_Machine_Problem
             // hidden textview to store ID (for reporting)
             txtID = FindViewById<TextView>(Resource.Id.textView1);
             txtID.Visibility = Android.Views.ViewStates.Invisible;
+            yourID = FindViewById<TextView>(Resource.Id.textView2);
+            yourID.Text = Intent.GetStringExtra("Name");
 
             Receive.Click += getMessage;
             Report.Click += reportMessage;
@@ -87,10 +89,11 @@ namespace IT123P_Machine_Problem
 
         public void reportMessage(object sender, EventArgs e)
         {
-            string user = Intent.GetStringExtra("Name");
+            
             string reportedID = txtID.Text;
-            string reporter = user;
+            string reporter = yourID.Text;
             string webRequest = "http://192.168.0.17/SupportApp/REST/report_message.php?messageID=" + reportedID + "&username=" + reporter;
+            //Console.WriteLine(webRequest);
             request = (HttpWebRequest)WebRequest.Create(webRequest);
             response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
